@@ -33,7 +33,7 @@ def generate_click_data(user_id, product_id):
     return {
         'user_id': user_id,
         'product_id': product_id,
-        'date_occured': datetime.now().isoformat(),
+        'date_occured': datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"),
         'page_url': fake.url(),
         'referrer_url': fake.url(),
         'session_id': fake.uuid4(),
@@ -47,7 +47,7 @@ def generate_checkout_data(user_id, product_id):
     return {
         'user_id': user_id,
         'product_id': product_id,
-        'date_occured': datetime.now().isoformat(),
+        'date_occured': datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"),
         'item_count': random.randint(1, 5),
         'total_price': round(random.uniform(10, 1000), 2),
         'payment_method': fake.credit_card_provider(),
